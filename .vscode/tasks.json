@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Rust: compilar (general)",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["build"],
+            "options": { "cwd": "${workspaceFolder}/general" },
+            "problemMatcher": ["$rustc"],
+            "group": { "kind": "build", "isDefault": true }
+        },
+        {
+            "label": "Rust: ejecutar (general)",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["run"],
+            "options": { "cwd": "${workspaceFolder}/general" },
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Rust ESP32: compilar",
+            "type": "shell",
+            "command": ". $HOME/export-esp.sh && cargo build",
+            "options": { "cwd": "${workspaceFolder}/esp32_rust/firmware_esp32" },
+            "problemMatcher": ["$rustc"],
+            "group": "build"
+        }
+    ]
+}
